@@ -1,45 +1,34 @@
 # Restaurant Database
 
-## Description
-
-This project is a database model and SQL implementation for a restaurant booking system.
-
-The database models:
-- restaurants
-- customers
-- restaurant tables
-- table bookings
+## Project Description
+This project contains a relational database for a restaurant booking system. It was designed to manage restaurants, customers, restaurant tables and bookings.
 
 ## Database Structure
+The database consists of four tables:
+- `RESTAURANT` – stores restaurant information.
+- `CUSTOMER` – stores customer information.
+- `RESTAURANT_TABLE` – stores tables belonging to a restaurant.
+- `BOOKING` – stores bookings and links customers to restaurant tables.
 
-The database contains four main tables:
+## Database Design and Normalization
+The project includes:
+- `Restaurant_Database_ER.png` – Entity Relationship (ER) diagram.
+- `Restaurant_Database_RDM.pdf` – Relational Data Model (RDM).
+- `Normalization_3NF.md` – explanation of normalization to Third Normal Form (3NF).
 
-- RESTAURANT
-- CUSTOMER
-- RESTAURANT_TABLE
-- BOOKING
+The schema uses primary keys, foreign keys and unique constraints to maintain data integrity. The normalization document explains the design in terms of 1NF, 2NF and 3NF.
 
-The database is normalized to the Third Normal Form (3NF).
+## SQL Implementation
+The file `restaurant_database.sql` creates the database and tables, defines relationships and constraints, inserts test data, and contains three queries:
 
-## Diagrams
-
-The repository contains:
-- Entity Relationship (ER) diagram
-- Relational Data Model (RDM)
-- Normalization to 3NF
-
-## SQL
-
-The SQL script creates the database, tables, relationships, constraints and realistic test data.
-
-It also contains the three required SQL queries:
 1. List all restaurant tables.
-2. List all bookings for a given customer ordered by date.
-3. List all bookings for a given table on a specific date, including customer information.
+2. List bookings for a given customer, ordered by date.
+3. List bookings for a given table on a specific date, including customer information.
 
 ## Project Files
-
-- `restaurant_database.sql` – database implementation and queries
-- `Restaurant_Database_ER.png` – ER diagram
-- `Relational Data Model (RDM).drawio.pdf` – relational data model
-- `Normalization_3NF.drawio.pdf` – 3NF normalization
+- `.gitignore` – specifies files Git should ignore.
+- `README.md` – project documentation.
+- `Restaurant_Database_ER.png` – ER diagram.
+- `Restaurant_Database_RDM.pdf` – RDM diagram.
+- `Normalization_3NF.md` – normalization explanation.
+- `restaurant_database.sql` – SQL schema, test data and queries 

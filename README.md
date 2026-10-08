@@ -31,4 +31,5 @@ The file `restaurant_database.sql` creates the database and tables, defines rela
 - `Restaurant_Database_ER.png` – ER diagram.
 - `Restaurant_Database_RDM.pdf` – RDM diagram.
 - `Normalization_3NF.md` – normalization explanation.
+- `Normalization_3NF.png`– final database schema in 3NF.
 - `restaurant_database.sql` – SQL schema, test data and queries 

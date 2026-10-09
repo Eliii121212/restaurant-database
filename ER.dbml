@@ -1,0 +1,38 @@
+Table RESTAURANT {
+  restaurantID int [pk, increment]
+  name varchar(100) [not null]
+  address varchar(200) [not null]
+  phone varchar(30) [not null]
+}
+
+Table CUSTOMER {
+  customerID int [pk, increment]
+  firstName varchar(50) [not null]
+  lastName varchar(50) [not null]
+  email varchar(100) [not null]
+  phone varchar(30) [not null]
+}
+
+Table RESTAURANT_TABLE {
+  tableID int [pk, increment]
+  restaurantID int [not null, ref: > RESTAURANT.restaurantID]
+  tableNumber int [not null]
+  capacity int [not null]
+
+  indexes {
+    (restaurantID, tableNumber) [unique]
+  }
+}
+
+Table BOOKING {
+  bookingID int [pk, increment]
+  customerID int [not null, ref: > CUSTOMER.customerID]
+  tableID int [not null, ref: > RESTAURANT_TABLE.tableID]
+  bookingDate date [not null]
+  bookingTime time [not null]
+  numberOfGuests int [not null]
+
+  indexes {
+    (tableID, bookingDate, bookingTime) [unique]
+  }
+}

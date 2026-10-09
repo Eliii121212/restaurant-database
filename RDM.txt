@@ -1,0 +1,32 @@
+RESTAURANT(
+    restaurantID PK,
+    name,
+    address,
+    phone
+)
+
+CUSTOMER(
+    customerID PK,
+    firstName,
+    lastName,
+    email,
+    phone
+)
+
+RESTAURANT_TABLE(
+    tableID PK,
+    restaurantID FK → RESTAURANT.restaurantID,
+    tableNumber,
+    capacity,
+    UNIQUE(restaurantID, tableNumber)
+)
+
+BOOKING(
+    bookingID PK,
+    customerID FK → CUSTOMER.customerID,
+    tableID FK → RESTAURANT_TABLE.tableID,
+    bookingDate,
+    bookingTime,
+    numberOfGuests,
+    UNIQUE(tableID, bookingDate, bookingTime)
+)
